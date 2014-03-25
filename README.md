@@ -13,6 +13,22 @@ Winmon doesn't really have an interface because it is designed to be as minimall
 
 In additon to using simply monitoring your system's statistics, it also sends your device push notification when someone logs on/off to your computer or when someone locks/unlocks your computer.
 
+Building
+----
+
+Winmon relies on few external libraries which are all listed in the requirements.txt file.
+
+ - psutil
+ - uptime
+ - requests
+
+Once all dependency requirements have been fulfilled, you can begin compiling the code into the executable. Winmon relies
+on Py2Exe for bootstrapping it into a Windows executable. You can build the executable by executing:
+
+```
+python –OO setup.py py2exe
+```
+
 Installing
 ----
 
