@@ -32,12 +32,19 @@ python –OO setup.py py2exe
 Installing
 ----
 
-If you've downloaded the ZIP archive, simply unpack the archive to the location your service binaries should reside and 
-execute
+If you've downloaded the ZIP archive for the source distribution, simply unpack the archive to the location your service  should reside and execute:
 
 ```
-service.py install
+python service.py install
 ```
+
+If you've downloaded the ZIP archive for binary distribution, simply unpack the archive to the location your service  should reside and execute:
+
+```
+service.exe --startup=auto install
+```
+
+The `-startup=auto` option installs the service to startup automatically when the system starts.
 
 If you've downloaded the MSI installed, simply run it and follow the instructions onscreen to install it.
 
