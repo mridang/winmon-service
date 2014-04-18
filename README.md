@@ -26,7 +26,7 @@ Once all dependency requirements have been fulfilled, you can begin compiling th
 on Py2Exe for bootstrapping it into a Windows executable. You can build the executable by executing:
 
 ```
-python –OO setup.py py2exe
+python -OO setup.py py2exe
 ```
 
 Installing
