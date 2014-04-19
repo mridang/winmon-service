@@ -21,6 +21,7 @@ Winmon relies on few external libraries which are all listed in the requirements
  - psutil
  - uptime
  - requests
+ - python-gcm
 
 Once all dependency requirements have been fulfilled, you can begin compiling the code into the executable. Winmon relies
 on Py2Exe for bootstrapping it into a Windows executable. You can build the executable by executing:
@@ -28,6 +29,15 @@ on Py2Exe for bootstrapping it into a Windows executable. You can build the exec
 ```
 python -OO setup.py py2exe
 ```
+
+Building the executable should yield a a bunch of DLLs, PYDs, ZIPs and a EXE in the `dist` directory. For packing the files into a MSI, you'll need to the WiX toolchain installed. If you've installed WiX and `candle` and `light` are in your path, execute:
+
+```
+candle.exe -nologo installer.wxs -out installer.wix -ext WixUIExtension  
+light.exe -nologo installer.wix -out installer.msi -ext WixUIExtension  
+```
+
+This will build a MSI that you can distribute.
 
 Installing
 ----
