@@ -33,8 +33,8 @@ python -OO setup.py py2exe
 Building the executable should yield a a bunch of DLLs, PYDs, ZIPs and a EXE in the `dist` directory. For packing the files into a MSI, you'll need to the WiX toolchain installed. If you've installed WiX and `candle` and `light` are in your path, execute:
 
 ```
-candle.exe -nologo installer.wxs -out installer.wix -ext WixUIExtension  
-light.exe -nologo installer.wix -out installer.msi -ext WixUIExtension  
+candle.exe -nologo installer.wxs -out build\bdist.win32\winmsi\installer.wix -ext WixUIExtension
+light.exe -nologo build\bdist.win32\winmsi\installer.wix -pdbout build\bdist.win32\winmsi\installer.pdb -out installer.msi -ext WixUIExtension
 ```
 
 This will build a MSI that you can distribute.
